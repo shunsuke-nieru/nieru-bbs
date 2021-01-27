@@ -12,6 +12,7 @@ const Home = ({ posts }) => {
             <Link href={`/${post.thread_id}`}>
               <a>{post.title}</a>
             </Link>
+            ({post.res_count})
           </li>
         ))}
       </ul>
@@ -22,7 +23,7 @@ const Home = ({ posts }) => {
 // ビルド時にデータを取得し静的なファイルを事前に生成
 export const getServerSideProps = async () => {
   // 全記事データを取得
-  const res = await fetch("https://nieru.net/_api/board.php?p=1000");
+  const res = await fetch("https://nieru.net/_api/board.php?p=50");
   const posts = await res.json();
 
   // コンポーネントに渡すデータを指定
