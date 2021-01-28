@@ -13,7 +13,7 @@ export default ({ post }) => {
         </div>
       ))}
       <Link href="/">
-        <a>Back</a>
+        <a>スレッド一覧</a>
       </Link>
     </div>
   );
