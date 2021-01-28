@@ -1,9 +1,13 @@
 import Link from "next/link";
+import Head from "next/head";
 
 // post：getStaticPropsから取得したデータ
 export default ({ post }) => {
   return (
     <div>
+      <Head>
+        <title>tets</title>
+      </Head>
       {post.map((data) => (
         <div>
           <small>

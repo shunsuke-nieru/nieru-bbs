@@ -19,9 +19,14 @@ const Home = ({ posts }) => {
     </div>
   );
 };
-
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: true,
+  };
+}
 // ビルド時にデータを取得し静的なファイルを事前に生成
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   // 全記事データを取得
   const res = await fetch("https://nieru.net/_api/board.php?p=50");
   const posts = await res.json();
@@ -31,6 +36,7 @@ export const getServerSideProps = async () => {
     props: {
       posts,
     },
+    revalidate: 10,
   };
 };
 
