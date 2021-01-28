@@ -19,7 +19,7 @@ export default ({ post }) => {
   );
 };
 
-export const getServerSidePaths = async () => {
+/*export const getServerSidePaths = async () => {
   // 外部APIエンドポイントを呼び出しデータ取得
   const res = await fetch(`https://nieru.net/_api/board.php?p=1000`);
   const posts = await res.json();
@@ -35,7 +35,7 @@ export const getServerSidePaths = async () => {
   // fallback：事前ビルドしたパス以外にアクセスしたときのパラメータ true:カスタム404Pageを表示 false:404pageを表示
   return { paths, fallback: false };
 };
-
+*/
 // paramsには上記pathsで指定した値が入る（1postずつ）
 export const getServerSideProps = async ({ params }) => {
   // 外部APIエンドポイントを呼び出しデータ取得
